@@ -8,7 +8,6 @@
 // App Shared Sass variables belong in app.variables.scss.
 
 @import "../pages/page1/page1";
-
 @import "../pages/page2/page2";
 @import "../pages/confirm-payment/confirm-payment.scss";
 @import "../pages/contact-booking/contact-booking.scss";
@@ -17,3 +16,15 @@
 @import "../pages/user-profle/user-profle.scss";
 @import "../pages/signup-page/signup-page.scss";
 @import "../pages/login-page/login-page.scss";
+
+.btn-center{
+  margin: 0 auto;
+  text-align: center;
+}
+
+#btn-bottom{
+position: absolute; 
+bottom: 10px; 
+width: 100%    
+
+}
