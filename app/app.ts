@@ -21,7 +21,7 @@ class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Page uno', component: Page1 },
-      { title: 'Page dos', component: Page2 }
+      { title: 'Page dos', component: Page2 },
     ];
 
   }
@@ -33,7 +33,7 @@ class MyApp {
       StatusBar.styleDefault();
     });
   }
-
+//HAMBURGER BUTTON
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
