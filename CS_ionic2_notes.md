@@ -11,7 +11,7 @@ Add to **app.core.scss**
 
 `@import "../pages/login-page/login-page.scss";`
 
-####Make the Login Page be the root page
+###Make the Login Page be the root page
 
 1. go to **app.ts**
 
@@ -96,3 +96,81 @@ width: 100%
 
 I did this so that I can have access to the sideMenu while I work on the other static pages for the app
 
+###Add new Pages to SideMenu
+
+1. create the page
+
+`ionic g page showoff Profile`
+
+2. add the `<ion-navbar>`
+
+in the **showoff-profile.html**
+
+```html
+
+<ion-navbar *navbar>
+
+  <button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+
+  <ion-title>showoffs profile</ion-title>
+</ion-navbar>
+
+```
+
+#####Show in the sideMenu & link them
+
+3. Go over to the **app.ts** file and we need to..
+
+IMPORT the `ShowoffProfilePage` class from **showoff-profile.ts**
+
+ADD the `ShowoffProfilePage` component into the SideMenu
+
+` { title: 'Showoffs Profiles', component: ShowoffProfilePage},`
+
+**app.ts** SAMPLE
+
+```javascript
+
+import { Component, ViewChild } from '@angular/core';
+import { App, ionicBootstrap, Platform, Nav } from 'ionic-angular';
+import { StatusBar } from 'ionic-native';
+
+import { ShowoffProfilePage } from './pages/showoff-profile/showoff-profile';
+
+@Component({
+  templateUrl: 'build/app.html'
+})
+
+class MyApp {
+  @ViewChild(Nav) nav: Nav;
+
+  rootPage: any = LoginPagePage;
+
+  pages: Array<{title: string, component: any}>
+
+  constructor(private platform: Platform) {
+    this.initializeApp();
+
+    this.pages = [
+      { title: 'Showoffs Profiles', component: ShowoffProfilePage},
+    ];
+
+  }
+
+  initializeApp() {
+    this.platform.ready().then(() => {
+      StatusBar.styleDefault();
+    });
+  }
+  
+  openPage(page) {
+   this.nav.setRoot(page.component);
+  }
+}
+
+ionicBootstrap(MyApp);
+
+
+```

@@ -3,6 +3,14 @@ import { App, ionicBootstrap, Platform, Nav } from 'ionic-angular';
 import { StatusBar } from 'ionic-native';
 
 import { LoginPagePage } from './pages/login-page/login-page';
+import { SignupPagePage } from './pages/signup-page/signup-page';
+import { ConfirmPaymentPage } from './pages/confirm-payment/confirm-payment';
+import { UserProflePage } from './pages/user-profle/user-profle';
+import { DestinationsPagePage } from './pages/destinations-page/destinations-page';
+import { ShowoffProfilePage } from './pages/showoff-profile/showoff-profile';
+import { ContactBookingPage } from './pages/contact-booking/contact-booking';
+
+
 import { Page1 } from './pages/page1/page1';
 import { Page2 } from './pages/page2/page2';
 
@@ -24,6 +32,13 @@ class MyApp {
     this.pages = [
       { title: 'Page uno', component: Page1 },
       { title: 'Page dos', component: Page2 },
+      { title: 'Login', component: LoginPagePage },
+      { title: 'Sign Up', component: SignupPagePage },
+      { title: 'Profile', component: UserProflePage },
+      { title: 'Destinations', component: DestinationsPagePage },
+      { title: 'Showoffs Profiles', component: ShowoffProfilePage},
+      { title: 'Contact Showoff', component: ContactBookingPage},
+      { title: 'Confirm Payment', component: ConfirmPaymentPage }
     ];
 
   }
